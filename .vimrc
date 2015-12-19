@@ -82,15 +82,6 @@ Bundle 't9md/vim-choosewin'
 Bundle 'scrooloose/syntastic'
 " Paint css colors with the real color
 Bundle 'lilydjwg/colorizer'
-" Relative numbering of lines (0 is the current line)
-" (disabled by default because is very intrusive and can't be easily toggled
-" on/off. When the plugin is present, will always activate the relative 
-" numbering every time you go to normal mode. Author refuses to add a setting 
-" to avoid that)
-" Bundle 'myusuf3/numbers.vim'
-
-" Plugins from vim-scripts repos:
-
 " Search results counter
 Bundle 'IndexedSearch'
 " XML/HTML tags navigation
@@ -99,14 +90,13 @@ Bundle 'matchit.zip'
 Bundle 'Wombat'
 " Yank history navigation
 Bundle 'YankRing.vim'
-
 " Flake8 Vim 插件
 Bundle 'nive/vim-flake8'
 " Python代码风格检查插件
 Bundle 'vim-scripts/pylint.vim'
 
 " ============================================================================
-" Install plugins the first time vim runs
+" Install plugins the first
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -115,41 +105,58 @@ if iCanHazVundle == 0
 endif
 
 " ============================================================================
-" Vim settings and mappings
-" You can edit them as you wish
+" Vim和键值的设置
 
-" allow plugins by file type (required for plugins!)
+" 设置背景颜色为黑色
+set background=dark
+
+" 允许插件在相应的文件类型上使用
+" 打开文件类型差别
 filetype plugin on
+" 使用文件类型缩进
 filetype indent on
 
-" tabs and spaces handling
+" tab键的空格个数
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" tab length exceptions on some file types
+" tab键空格个数在html上的特殊定义
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType python compiler pylint
 
-" always show status bar
+" 中文不乱码
+set fileencodings=utf-8,gb2312,gb18030
+set termencoding=utf-8
+set fileformats=unix
+set encoding=prc
+
+" 设置下方状态栏为显示模式
 set ls=2
 
 " incremental search
 set incsearch
-" highlighted search results
+" 高亮搜索结果
 set hlsearch
 
-" syntax highlight on
+" 打开语法高亮
 syntax on
 
-" show line numbers
+" 显示行号
 set nu
 
-" tab navigation mappings
-map tn :tabn<CR>
+" ===============================================
+" vim自定义快捷键格式
+" 模式: <快捷键> 要执行的命令
+" 模式: nmap为普通模式,imap为编辑模式
+" C表示ctrl,A表示Alt,S表示Shift,<CR>表示回车 
+" ==============================================
+
+" 标签页快捷键设置
+map tn :tabn<CR> 
 map tp :tabp<CR>
 map tm :tabm 
 map tt :tabnew 
@@ -177,7 +184,7 @@ imap <C-J> <C-X><C-O>
 " Disabled by default because preview makes the window flicker
 set completeopt-=preview
 
-" save as sudo
+" 以sudo权限保存
 ca w!! w !sudo tee "%"
 
 " simple recursive grep
@@ -191,7 +198,7 @@ nmap ,r :RecurGrepFast
 nmap ,wR :RecurGrep <cword><CR>
 nmap ,wr :RecurGrepFast <cword><CR>
 
-" use 256 colors when possible
+" 使用256色
 if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
 	let &t_Co = 256
     colorscheme fisa
@@ -199,19 +206,19 @@ else
     colorscheme delek
 endif
 
-" colors for gvim
+" 设置gvim的颜色样色
 if has('gui_running')
     colorscheme wombat
 endif
 
-" when scrolling, keep cursor 3 lines away from screen border
+" 当使用滚动条时，保持光标和底部存在3行的距离
 set scrolloff=3
 
 " autocompletion of files and commands behaves like shell
 " (complete only the common part, list the options that match)
 set wildmode=list:longest
 
-" better backup, swap and undos storage
+" 优化backup，swap以及undos保存设置
 set directory=~/.vim/dirs/tmp     " directory to place swap files in
 set backup                        " make backup files
 set backupdir=~/.vim/dirs/backups " where to put backup files
@@ -221,7 +228,7 @@ set viminfo+=n~/.vim/dirs/viminfo
 " store yankring history file there too
 let g:yankring_history_dir = '~/.vim/dirs/'
 
-" create needed directories if they don't exist
+" 创建必须的文件夹
 if !isdirectory(&backupdir)
     call mkdir(&backupdir, "p")
 endif
@@ -233,29 +240,27 @@ if !isdirectory(&undodir)
 endif
 
 " ============================================================================
-" Plugins settings and mappings
-" Edit them as you wish.
+" 插件及其快捷键设置
 
-" Tagbar ----------------------------- 
+" Tagbar 标签栏----------------------------- 
 
-" toggle tagbar display
+" 切换标签栏显示
 map <F4> :TagbarToggle<CR>
-" autofocus on tagbar open
+" autofocus标签栏
 let g:tagbar_autofocus = 1
 
-" NERDTree ----------------------------- 
+" NERDTree 文件目录查看--------------------- 
 
-" toggle nerdtree display
+" 切换nerdtree显示
 map <F3> :NERDTreeToggle<CR>
-" open nerdtree with the current file selected
+" 以选中模式让当前文件显示在nerdtree中
 nmap ,t :NERDTreeFind<CR>
-" don;t show these file types
+" 不显示.pyc和.pyo文件
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
-
 
 " Tasklist ------------------------------
 
-" show pending tasks list
+" 显示tasks list
 map <F2> :TaskList<CR>
 
 " Vim-debug ------------------------------
@@ -272,7 +277,7 @@ map <F10> :Dbg watch<CR>
 map <F11> :Dbg down<CR>
 map <F12> :Dbg up<CR>
 
-" CtrlP ------------------------------
+" CtrlP 在文件夹中查找某字符的插件------------------------------
 
 " file finder mapping
 let g:ctrlp_map = ',e'
@@ -307,7 +312,7 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.pyc$\|\.pyo$',
   \ }
 
-" Syntastic ------------------------------
+" Syntastic 语法检查插件------------------------------
 
 " show list of errors and warnings on the current file
 nmap <leader>e :Errors<CR>
