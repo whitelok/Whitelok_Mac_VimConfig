@@ -1,11 +1,10 @@
 " ============================================================================
-" Vundle initialization
-" Avoid modify this section, unless you are very sure of what you are doing
+" 初始化Vundle
 
 " no vi-compatible
 set nocompatible
 
-" Setting up Vundle - the vim plugin bundler
+" 配置vim插件管理器Vundle
 let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
 if !filereadable(vundle_readme)
@@ -21,16 +20,15 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle
+" 用Vundle管理Vundle
 Bundle 'gmarik/vundle'
 
 " ============================================================================
-" Active plugins
-" You can disable or add new ones here:
+" 激活插件
 
-" Plugins from github repos:
+" 插件托管在github
 
-" Python and PHP Debugger
+" Python和PHP调试工具
 Bundle 'fisadev/vim-debug.vim'
 " Better file browser
 Bundle 'scrooloose/nerdtree'
@@ -44,11 +42,11 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'fisadev/vim-ctrlp-cmdpalette'
 " Zen coding
 Bundle 'mattn/emmet-vim'
-" Git integration
+" Git交互插件
 Bundle 'motemen/git-vim'
 " Tab list panel
 Bundle 'kien/tabman.vim'
-" Airline
+" 状态栏显示工具
 Bundle 'bling/vim-airline'
 " Terminal Vim with 256 colors colorscheme
 Bundle 'fisadev/fisa-vim-colorscheme'
@@ -102,6 +100,11 @@ Bundle 'Wombat'
 " Yank history navigation
 Bundle 'YankRing.vim'
 
+" Flake8 Vim 插件
+Bundle 'nive/vim-flake8'
+" Python代码风格检查插件
+Bundle 'vim-scripts/pylint.vim'
+
 " ============================================================================
 " Install plugins the first time vim runs
 
@@ -129,6 +132,7 @@ set shiftwidth=4
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType python compiler pylint
 
 " always show status bar
 set ls=2
