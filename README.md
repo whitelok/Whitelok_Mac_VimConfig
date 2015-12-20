@@ -36,7 +36,7 @@
  - `,D`
  - `,o`
  
- ###Edit模式
+###Edit模式：
  - `Ctrl+o Ctrl+x Ctrl+j` 自动完成代码
 
 ##Dependencies Plugin 依赖插件
