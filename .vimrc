@@ -30,73 +30,73 @@ Bundle 'gmarik/vundle'
 
 " Python和PHP调试工具
 Bundle 'fisadev/vim-debug.vim'
-" Better file browser
+" 文件夹导航栏
 Bundle 'scrooloose/nerdtree'
-" Code commenter
+" 快速注释插件
 Bundle 'scrooloose/nerdcommenter'
-" Class/module browser
+" 标签栏插件
 Bundle 'majutsushi/tagbar'
-" Code and files fuzzy finder
+" 字符or字符串全文件查找插件
 Bundle 'kien/ctrlp.vim'
-" Extension to ctrlp, for fuzzy command finder
+" ctrlp的命令查找器
 Bundle 'fisadev/vim-ctrlp-cmdpalette'
 " Zen coding
 Bundle 'mattn/emmet-vim'
 " Git交互插件
 Bundle 'motemen/git-vim'
-" Tab list panel
+" 标签表面板
 Bundle 'kien/tabman.vim'
 " 状态栏显示工具
 Bundle 'bling/vim-airline'
-" Terminal Vim with 256 colors colorscheme
+" 256色颜色插件
 Bundle 'fisadev/fisa-vim-colorscheme'
-" Consoles as buffers
+" 在vim在模拟Terminal，运行:ConqueTermSplit
+" ipython就可以分割一个窗口并在其中执行ipython解释器
 Bundle 'rosenfeld/conque-term'
-" Pending tasks list
+" 任务列表插件
 Bundle 'fisadev/FixedTaskList.vim'
-" Surround
+" 方便的在字符两边插入各种符号
 Bundle 'tpope/vim-surround'
-" Autoclose
+" 自动闭合代码块
 Bundle 'Townk/vim-autoclose'
-" Indent text object
+" 代码模块缩进
 Bundle 'michaeljsmith/vim-indent-object'
-" Python mode (indentation, doc, refactor, lints, code checking, motion and
-" operators, highlighting, run and ipdb breakpoints)
+" Python模式(缩进, 文档, 重命名, lints, 代码检查, motion and
+" 操作符, 代码高亮, 运行以及ipdb断点调试)
 Bundle 'klen/python-mode'
-" Better autocompletion
+" 代码补全
 Bundle 'Shougo/neocomplcache.vim'
-" Snippets manager (SnipMate), dependencies, and snippets repo
+" Snippets 管理器 (SnipMate), 依赖, and snippets 库
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
 " Git/mercurial/others diff icons on the side of the file lines
 Bundle 'mhinz/vim-signify'
-" Automatically sort python imports
+" python imports库自动排列
 Bundle 'fisadev/vim-isort'
 " Drag visual blocks arround
 Bundle 'fisadev/dragvisuals.vim'
-" Window chooser
+" 补全窗口块
 Bundle 't9md/vim-choosewin'
-" Python and other languages code checker
+" Python语法检查器
 Bundle 'scrooloose/syntastic'
-" Paint css colors with the real color
+" CSS颜色显示
 Bundle 'lilydjwg/colorizer'
-" Search results counter
+" 搜索结果计数器
 Bundle 'IndexedSearch'
-" XML/HTML tags navigation
+" XML/HTML 标签导航
 Bundle 'matchit.zip'
-" Gvim colorscheme
+" Gvim 颜色框架
 Bundle 'Wombat'
 " Yank history navigation
+" 同时粘贴多个需要的单词等
 Bundle 'YankRing.vim'
 " Flake8 Vim 插件
-Bundle 'nive/vim-flake8'
-" Python代码风格检查插件
-Bundle 'vim-scripts/pylint.vim'
+Bundle 'vim-flake8'
 
 " ============================================================================
-" Install plugins the first
+" 安装插件
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -126,13 +126,6 @@ set shiftwidth=4
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType python compiler pylint
-
-" 中文不乱码
-set fileencodings=utf-8,gb2312,gb18030
-set termencoding=utf-8
-set fileformats=unix
-set encoding=prc
 
 " 设置下方状态栏为显示模式
 set ls=2
@@ -176,10 +169,10 @@ imap <M-Left> <ESC><c-w>h
 imap <M-Up> <ESC><c-w>k
 imap <M-Down> <ESC><c-w>j
 
-" old autocomplete keyboard shortcut
+" old 代码自动补全键
 imap <C-J> <C-X><C-O>
 
-" Comment this line to enable autocompletion preview window
+" 开启代码自动补全框
 " (displays documentation related to the selected completion option)
 " Disabled by default because preview makes the window flicker
 set completeopt-=preview
@@ -187,10 +180,12 @@ set completeopt-=preview
 " 以sudo权限保存
 ca w!! w !sudo tee "%"
 
+" 快速递归搜索
 " simple recursive grep
 " both recursive grep commands with internal or external (fast) grep
 command! -nargs=1 RecurGrep lvimgrep /<args>/gj ./**/*.* | lopen | set nowrap
 command! -nargs=1 RecurGrepFast silent exec 'lgrep! <q-args> ./**/*.*' | lopen
+" 快捷调用
 " mappings to call them
 nmap ,R :RecurGrep 
 nmap ,r :RecurGrepFast 
@@ -214,6 +209,7 @@ endif
 " 当使用滚动条时，保持光标和底部存在3行的距离
 set scrolloff=3
 
+" 代码自动完成
 " autocompletion of files and commands behaves like shell
 " (complete only the common part, list the options that match)
 set wildmode=list:longest
@@ -244,8 +240,8 @@ endif
 
 " Tagbar 标签栏----------------------------- 
 
-" 切换标签栏显示
-map <F4> :TagbarToggle<CR>
+" 切换标签栏显示(使用前先下载ctag)
+" map <F4> :TagbarToggle<CR>
 " autofocus标签栏
 let g:tagbar_autofocus = 1
 
@@ -260,11 +256,12 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 " Tasklist ------------------------------
 
-" 显示tasks list
+" 显示tasks list(显示各种todo之类的)
 map <F2> :TaskList<CR>
 
-" Vim-debug ------------------------------
+" Vim-debug 调试各种代码------------------------------
 
+" 关闭部分快捷键设置，避免和调试工具冲突
 " disable default mappings, have a lot of conflicts with other plugins
 let g:vim_debug_disable_mappings = 1
 " add some useful mappings
@@ -286,8 +283,10 @@ nmap ,g :CtrlPBufTag<CR>
 " tags (symbols) in all files finder mapping
 nmap ,G :CtrlPBufTagAll<CR>
 " general code finder in all files mapping
+" 在所有文件中找
 nmap ,f :CtrlPLine<CR>
 " recent files finder mapping
+" 在当前文件中找某字符
 nmap ,m :CtrlPMRUFiles<CR>
 " commands finder mapping
 nmap ,c :CtrlPCmdPalette<CR>
@@ -315,8 +314,10 @@ let g:ctrlp_custom_ignore = {
 " Syntastic 语法检查插件------------------------------
 
 " show list of errors and warnings on the current file
+" 显示当前文件中所有错误和警告的地方
 nmap <leader>e :Errors<CR>
 " check also when just opened the file
+" 刚打开文件检查一次错误和警告
 let g:syntastic_check_on_open = 1
 " don't put icons on the sign column (it hides the vcs status icons of signify)
 let g:syntastic_enable_signs = 0
@@ -327,8 +328,9 @@ let g:syntastic_enable_signs = 0
 "let g:syntastic_style_error_symbol = '✗'
 "let g:syntastic_style_warning_symbol = '⚠'
 
-" Python-mode ------------------------------
-
+" Python-mode Python代码检查------------------------------
+" Python PEP8 格式整理
+nmap <F4> :PymodeLintAuto<CR>
 " don't use linter, we use syntastic for that
 let g:pymode_lint_on_write = 0
 let g:pymode_lint_signs = 0
@@ -364,7 +366,7 @@ let g:neocomplcache_min_syntax_length = 1
 let g:neocomplcache_same_filetype_lists = {}
 let g:neocomplcache_same_filetype_lists._ = '_'
 
-" TabMan ------------------------------
+" TabMan 标签管理器------------------------------
 
 " mappings to toggle display, and to focus on it
 let g:tabman_toggle = 'tl'
