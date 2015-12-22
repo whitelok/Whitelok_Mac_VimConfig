@@ -94,6 +94,9 @@ Bundle 'Wombat'
 Bundle 'YankRing.vim'
 " Flake8 Vim 插件
 Bundle 'vim-flake8'
+" 源码查看器
+Bundle 'davidhalter/jedi-vim'
+
 
 " ============================================================================
 " 安装插件
@@ -428,3 +431,16 @@ let g:airline#extensions#whitespace#enabled = 0
 "let g:airline_symbols.branch = '⭠'
 "let g:airline_symbols.readonly = '⭤'
 "let g:airline_symbols.linenr = '⭡'
+
+" TagList ------------------------------
+"let Tlist_Auto_Highlight_Tag=1
+"let Tlist_Auto_Open=1
+"let Tlist_Auto_Update=1
+"let Tlist_Display_Tag_Scope=1
+"let Tlist_Exit_OnlyWindow=1
+"let Tlist_Enable_Dold_Column=1
+"let Tlist_File_Fold_Auto_Close=1
+"let Tlist_Show_One_File=1
+"let Tlist_Use_Right_Window=1
+"let Tlist_Use_SingleClick=1
+"nmap ,v :TlistToggle<CR>
