@@ -35,38 +35,39 @@
  - `,c`
  - `,D`
  - `,o`
+ - `\g` 跳转到代码定义位置
  
 ###Edit模式：
  - `Ctrl+o Ctrl+x Ctrl+j` 自动完成代码
 
 ##Dependencies Plugin 依赖插件
-- Python和PHP调试工具 fisadev/vim-debug.vim
-- 文件夹导航栏 scrooloose/nerdtree
-- 快速注释插件 scrooloose/nerdcommenter
-- 标签栏插件 majutsushi/tagbar
-- 字符or字符串全文件查找插件 kien/ctrlp.vim
-- ctrlp的命令查找器 fisadev/vim-ctrlp-cmdpalette
-- Zen coding mattn/emmet-vim
-- Git交互插件 motemen/git-vim
-- 标签表面板 kien/tabman.vim
-- 状态栏显示工具 bling/vim-airline
-- 256色颜色插件 fisadev/fisa-vim-colorscheme
-- 在vim在模拟Terminal，运行:ConqueTermSplit ipython就可以分割一个窗口并在其中执行ipython解释器 rosenfeld/conque-term
-- 任务列表插件 fisadev/FixedTaskList.vim
-- 方便的在字符两边插入各种符号 tpope/vim-surround
-- 自动闭合代码块 Townk/vim-autoclose
-- 代码模块缩进 michaeljsmith/vim-indent-object
-- Python模式(缩进, 文档, 重命名, lints, 代码检查, motion and 操作符, 代码高亮, 运行以及ipdb断点调试) klen/python-mode
-- 代码补全 Shougo/neocomplcache.vim
-- Snippets 管理器 (SnipMate), 依赖, 以及snippets库 MarcWeber/vim-addon-mw-utils tomtom/tlib_vim honza/vim-snippets garbas/vim-snipmate
-- Git/mercurial/others diff icons on the side of the file lines mhinz/vim-signify
-- python imports库自动排列 fisadev/vim-isort
-- Drag visual blocks arround fisadev/dragvisuals.vim
-- 补全窗口块 t9md/vim-choosewin
-- Python语法检查器 scrooloose/syntastic
-- CSS颜色显示 lilydjwg/colorizer
-- 搜索结果计数器 IndexedSearch
-- XML/HTML 标签导航 matchit.zip
-- Gvim 颜色框架 Wombat
-- Yank history navigation 同时粘贴多个需要的单词等 YankRing.vim
-- Flake8 Vim 插件 vim-flake8
+- Python和PHP调试工具: [fisadev/vim-debug](https://github.com/fisadev/vim-debug)或[jaredly/vim-debug](https://github.com/jaredly/vim-debug)
+- 文件夹导航栏: [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
+- 快速注释插件: [scrooloose/nerdcommenter](https://github.com/scrooloose/nerdcommenter)
+- 标签栏插件: [majutsushi/tagbar](https://github.com/majutsushi/tagbar)
+- 字符or字符串全文件查找插件: [kien/ctrlp](https://github.com/kien/ctrlp.vim)
+- ctrlp的命令查找器: [fisadev/vim-ctrlp-cmdpalette](https://github.com/fisadev/vim-ctrlp-cmdpalette)
+- Zen coding: [mattn/emmet-vim](https://github.com/mattn/emmet-vim)
+- Git交互插件: [motemen/git-vim](https://github.com/motemen/git-vim)
+- 标签表面板: [kien/tabman](https://github.com/kien/tabman.vim)
+- 状态栏显示工具: [bling/vim-airline](https://github.com/bling/vim-airline)
+- 256色颜色插件: [fisadev/fisa-vim-colorscheme](https://github.com/fisadev/fisa-vim-colorscheme)
+- 在vim在模拟Terminal，运行:ConqueTermSplit ipython就可以分割一个窗口并在其中执行ipython解释器: [rosenfeld/conque-term](https://github.com/rosenfeld/conque-term)
+- 任务列表插件 [fisadev/FixedTaskList](https://github.com/vimplugin/fixedtasklist)
+- 方便的在字符两边插入各种符号 [tpope/vim-surround](https://github.com/tpope/vim-surround)
+- 自动闭合代码块 [Townk/vim-autoclose](https://github.com/Townk/vim-autoclose)
+- 代码模块缩进 [michaeljsmith/vim-indent-object](https://github.com/michaeljsmith/vim-indent-object)
+- Python模式(缩进, 文档, 重命名, lints, 代码检查, motion and 操作符, 代码高亮, 运行以及ipdb断点调试): [klen/python-mode](https://github.com/klen/python-mode)
+- 代码补全: [Shougo/neocomplcache](https://github.com/Shougo/neocomplcache.vim)
+- Snippets 管理器 (SnipMate), 依赖, 以及snippets库: [MarcWeber/vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils) [tomtom/tlib_vim](https://github.com/tomtom/tlib_vim) [honza/vim-snippets](https://github.com/honza/vim-snippets) [garbas/vim-snipmate](https://github.com/garbas/vim-snipmate)
+- Git/mercurial/others diff icons on the side of the file lines: [mhinz/vim-signify](https://github.com/mhinz/vim-signify)
+- python imports库自动排列: [fisadev/vim-isort](https://github.com/fisadev/vim-isort)
+- Drag visual blocks arround: [fisadev/dragvisuals](https://github.com/joshukraine/dragvisuals)
+- 补全窗口块: [t9md/vim-choosewin](https://github.com/t9md/vim-choosewin)
+- Python语法检查器: [scrooloose/syntastic](https://github.com/scrooloose/syntastic)
+- CSS颜色显示: [lilydjwg/colorizer](https://github.com/lilydjwg/colorizer)
+- 搜索结果计数器: [IndexedSearch](https://github.com/vim-scripts/IndexedSearch)
+- XML/HTML 标签导航: [matchit.zip](https://github.com/vim-scripts/matchit.zip)
+- Gvim 颜色框架: [Wombat](https://github.com/vim-scripts/Wombat)
+- Yank history navigation 同时粘贴多个需要的单词等: [YankRing](https://github.com/vim-scripts/YankRing.vim)
+- Flake8 Vim 插件: [vim-flake8](https://github.com/nvie/vim-flake8)
