@@ -1,6 +1,7 @@
 # Whitelok\_Mac_VimConfig
-- My Vim configuration file for Python on Mac. 
-- Mac Python Vim配置文件。
+- *nix Vim configuration file for Python [https://github.com/whitelok/Whitelok\_Mac_VimConfig](https://github.com/whitelok/Whitelok_Mac_VimConfig). 
+- *nix Python Vim配置文件 [https://github.com/whitelok/Whitelok\_Mac_VimConfig](https://github.com/whitelok/Whitelok_Mac_VimConfig)。
+- 打造Vim上的Python IDE。
 
 ## Installation 安装
 - `git clone https://github.com/whitelok/Whitelok_Mac_VimConfig.git`
@@ -18,23 +19,14 @@
  - `,r` 快速递归搜索
  - `F3` 显示文件浏览器(并在不同窗口显示)
  - `F4` 自动利用PEP8规则整理代码
- - `F5` 
- - `F6`
- - `F7`
- - `F8`
- - `F9`
- - `F10`
- - `F11`
- - `F12`
- - `,e`
+ - `,e` 查询相同文件夹下文件结构
  - `\e` 显示代码中存在的错误
- - `,g`
- - `,G`
- - `,f`
- - `,m`
- - `,c`
- - `,D`
- - `,o`
+ - `,g` 列出文件中其他函数
+ - `,G` 跳到文件底部
+ - `,f` 列出头文件调用
+ - `,m` 查询项目文件结构
+ - `,c` 小功能说明
+ - `,D` 调试模式
  - `\g` 跳转到代码定义位置
  
 ###Edit模式：
@@ -71,3 +63,4 @@
 - Gvim 颜色框架: [Wombat](https://github.com/vim-scripts/Wombat)
 - Yank history navigation 同时粘贴多个需要的单词等: [YankRing](https://github.com/vim-scripts/YankRing.vim)
 - Flake8 Vim 插件: [vim-flake8](https://github.com/nvie/vim-flake8)
+- 源码查看器: [davidhalter/jedi-vim](https://github.com/davidhalter/jedi-vim)
