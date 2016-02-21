@@ -111,7 +111,7 @@ endif
 " Vim和键值的设置
 
 " 设置背景颜色为黑色
-set background=dark
+" set background=dark
 
 " 允许插件在相应的文件类型上使用
 " 打开文件类型差别
@@ -178,7 +178,7 @@ imap <C-J> <C-X><C-O>
 " 开启代码自动补全框
 " (displays documentation related to the selected completion option)
 " Disabled by default because preview makes the window flicker
-set completeopt-=preview
+" set completeopt-=preview
 
 " 以sudo权限保存
 ca w!! w !sudo tee "%"
