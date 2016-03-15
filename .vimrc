@@ -125,6 +125,10 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+" 设置批量tab快捷键
+xnoremap < <gv
+xnoremap > >gv
+
 " tab键空格个数在html上的特殊定义
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -268,14 +272,14 @@ map <F2> :TaskList<CR>
 " disable default mappings, have a lot of conflicts with other plugins
 let g:vim_debug_disable_mappings = 1
 " add some useful mappings
-map <F5> :Dbg over<CR>
-map <F6> :Dbg into<CR>
-map <F7> :Dbg out<CR>
-map <F8> :Dbg here<CR>
-map <F9> :Dbg break<CR>
-map <F10> :Dbg watch<CR>
-map <F11> :Dbg down<CR>
-map <F12> :Dbg up<CR>
+" map <F5> :Dbg over<CR>
+" map <F6> :Dbg into<CR>
+" map <F7> :Dbg out<CR>
+" map <F8> :Dbg here<CR>
+" map <F9> :Dbg break<CR>
+" map <F10> :Dbg watch<CR>
+" map <F11> :Dbg down<CR>
+" map <F12> :Dbg up<CR>
 
 " CtrlP 在文件夹中查找某字符的插件------------------------------
 
@@ -308,7 +312,7 @@ nmap ,wm :call CtrlPWithSearchText(expand('<cword>'), 'MRUFiles')<CR>
 nmap ,wc :call CtrlPWithSearchText(expand('<cword>'), 'CmdPalette')<CR>
 " don't change working directory
 let g:ctrlp_working_path_mode = 0
-" ignore these files and folders on file finder
+" 在查找字符串时不搜索这些字符串
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.git|\.hg|\.svn)$',
   \ 'file': '\.pyc$\|\.pyo$',
@@ -410,7 +414,7 @@ highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
 
 " mapping
 nmap  -  <Plug>(choosewin)
-" show big letters
+" 显示大写字母
 let g:choosewin_overlay_enable = 1
 
 " Airline ------------------------------
