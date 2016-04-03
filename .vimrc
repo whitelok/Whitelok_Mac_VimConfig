@@ -29,7 +29,7 @@ Bundle 'gmarik/vundle'
 " 插件托管在github
 
 " Python和PHP调试工具
-Bundle 'fisadev/vim-debug.vim'
+Bundle 'jaredly/vim-debug'
 " 文件夹导航栏
 Bundle 'scrooloose/nerdtree'
 " 快速注释插件
