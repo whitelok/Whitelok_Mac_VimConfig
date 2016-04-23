@@ -47,7 +47,7 @@ Bundle 'motemen/git-vim'
 " 标签表面板
 Bundle 'kien/tabman.vim'
 " 状态栏显示工具
-Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 " 256色颜色插件
 Bundle 'fisadev/fisa-vim-colorscheme'
 " 在vim在模拟Terminal，运行:ConqueTermSplit
