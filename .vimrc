@@ -446,3 +446,5 @@ let g:airline#extensions#whitespace#enabled = 0
 "let Tlist_Use_Right_Window=1
 "let Tlist_Use_SingleClick=1
 "nmap ,v :TlistToggle<CR>
+
+set backspace=2
