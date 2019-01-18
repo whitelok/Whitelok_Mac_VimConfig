@@ -63,7 +63,7 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'michaeljsmith/vim-indent-object'
 " Python模式(缩进, 文档, 重命名, lints, 代码检查, motion and
 " 操作符, 代码高亮, 运行以及ipdb断点调试)
-Bundle 'klen/python-mode'
+Bundle 'python-mode/python-mode'
 " 代码补全
 Bundle 'Shougo/neocomplcache.vim'
 " Snippets 管理器 (SnipMate), 依赖, and snippets 库
