@@ -1,0 +1,7 @@
+#!/bin/bash
+
+scale='scale=3;'
+
+scale=${scale}$@
+
+echo $scale|bc
