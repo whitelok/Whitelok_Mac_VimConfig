@@ -65,7 +65,8 @@ Bundle 'michaeljsmith/vim-indent-object'
 " 操作符, 代码高亮, 运行以及ipdb断点调试)
 Bundle 'python-mode/python-mode'
 " 代码补全
-Bundle 'Shougo/neocomplcache.vim'
+#Bundle 'Shougo/neocomplcache.vim'
+Bundle 'Valloric/YouCompleteMe'
 " Snippets 管理器 (SnipMate), 依赖, and snippets 库
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
